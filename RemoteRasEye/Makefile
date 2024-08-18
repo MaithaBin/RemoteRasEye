@@ -1,16 +1,16 @@
 CC = gcc
 CFLAG = 
-SRCS = sample.c ultrasonic.c logging.c
-OBJS = sample.o ultrasonic.o logging.o
+SRCS = main.c ultrasonic.c logging.c
+OBJS = main.o ultrasonic.o logging.o
 INCLUDE = 
 
 
-RemoteRasEye: sample.o ultrasonic.o logging.o
-	$(CC) -o RemoteRasEye sample.o ultrasonic.o logging.o -l wiringPi
+RemoteRasEye: main.o ultrasonic.o logging.o
+	$(CC) -o RemoteRasEye main.o ultrasonic.o logging.o -l wiringPi
 	rm -rf *.o
 	
-sample.o: sample.c
-	$(CC) -c sample.c
+main.o: main.c
+	$(CC) -c main.c
 
 ultrasonic.o: ultrasonic.c
 	$(CC) -c ultrasonic.c
