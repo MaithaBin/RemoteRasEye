@@ -4,10 +4,11 @@
 #include "ultrasonic.h"
 #include "logging.h"
 
+// All Error Messages
 char ERROR[3][64] = {
 	"Failed to setup MJPEG-Streamer.",
 	"Failed to setup wiringPi.",
-	"Failed to "
+	"Failed to send UDP message."
 };
 
 int main(void){
