@@ -89,4 +89,4 @@ python DetectFace.py
 ```
 If successful, the program detects human's faces drwaing grean rectangle.
 
-![PythonCodeUDP](https://github.com/user-attachments/assets/038cb229-bc66-451e-86e9-bcb2863e9beb)
+![PythonCodeUDP](https://github.com/user-attachments/assets/4afb6ce1-ef96-43fb-bb60-a013fa853ebb)
