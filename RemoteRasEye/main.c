@@ -38,7 +38,7 @@ int main(void){
     
     while(1){
         distance = distanceMeasure();
-        sprintf(result, "%0.1f cm", distance);
+        sprintf(result, "%0.1f", distance);
         udpSend(result);
         delay(100);
     }
