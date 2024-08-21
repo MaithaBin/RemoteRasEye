@@ -7,10 +7,10 @@ RemoteRasEye is originally written for creating a versatile camera system using 
 
 ## Environments
 ### Hardware
-- Raspberry Pi 4 model B
+- Raspberry Pi 4 model B(4GB)
 - Ultrasonic module (HC-SR04)
 - USB camera module (Akozonbtn0k51m6q)
-- Laptop (ThinkPad T480s)
+- PC (ThinkPad T480s)
 
 ### OSes
 - Debian 11 (bullseye)
@@ -68,11 +68,9 @@ make
 ```
 ./RemoteRasEye
 ```
-As soon as the program runs, the distance between ultrasonic module and the object is shown in the terminal. The accurately detectable range is 2 cm to 400 cm, even though this program also displays the distance either less than 2 cm or over than 400 cm.
+If the program fails to run because of errors, the log.txt will be created, mentioning the occurred error.
 
-![RasEye](https://github.com/user-attachments/assets/ea9c8173-08df-4202-8246-167bdfa58551)
-
-### Laptop
+### PC
 1. Download the program.
 ```
 git clone https://github.com/MaithaBin/RemoteRasEye.git
@@ -88,5 +86,7 @@ cd RemoteRasEye
 python DetectFace.py
 ```
 If successful, the program detects human's faces drwaing grean rectangle.
+
+After the program runs, the distance between ultrasonic module and the object is shown at the timing that it detects your face and drarw a rectangle. The accurately detectable range is 2 cm to 400 cm, even though this program also displays the distance either less than 2 cm or over than 400 cm.
 
 ![PythonCodeUDP](https://github.com/user-attachments/assets/4afb6ce1-ef96-43fb-bb60-a013fa853ebb)
