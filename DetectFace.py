@@ -1,6 +1,17 @@
 import cv2
+import socket
 
-# MJPEG stream URL
+# Initilizes socket
+MSG_SIZE = 1024
+host = "127.0.0.0"
+port = 5000
+locaddr = (host, port)
+
+# Create socket
+socket_desc = socket.socket(socket.AF_INET, type=socket.SOCK_DGRAM)
+socket_desc.bind(locaddr)
+
+# MJPG stream URL
 stream_url = "http://127.0.0.0:8080/?action=stream"
 
 # Loads the Haar cascade file for face detection
@@ -15,6 +26,10 @@ if not cap.isOpened():
     exit(-1)
 
 while True:
+    # Receives a message, and displays the distance when successfully detecting faces
+    msg, client_addr = socket_desc.recvfrom(MSG_SIZE)
+    msg = msg.decode(encoding='utf-8')
+    
     # Reads a frame from the stream
     ret, frame = cap.read()
     
@@ -31,6 +46,7 @@ while True:
     # Draws rectangles around detected faces
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        cv2.putText(frame, msg, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
     # Displays the frame with detected faces
     cv2.imshow("MJPG Stream with Face Detection", frame)
@@ -38,6 +54,8 @@ while True:
     # Exits if the ESC key is pressed
     if cv2.waitKey(1) == 27:
         break
+# Close the socket
+socket_desc.close()
 
 # Releases the video capture and close all OpenCV windows
 cap.release()
