@@ -31,7 +31,7 @@ RemoteRasEye is originally written for creating a versatile camera system using 
 ![Circuite](https://github.com/user-attachments/assets/d83dbff2-bc72-4738-842d-395a25c04d83)
 
 ## Prerequisites
-1. Setting up mjpg-streamer
+1.Setting up mjpg-streamer
 Please refer to the following repository and build mjpg-streamer in your Raspberry Pi.
 https://github.com/neuralassembly/mjpg-streamer
 
@@ -45,7 +45,7 @@ cd mjpg-streamer/mjpg-streamer-experimental
 make
 ```
 
-2. Installing WiringPi
+2.Installing WiringPi
 To access GPIO in C for Raspberry Pi,  install and build WiringPi.
 ```
 git clone https://github.com/WiringPi/WiringPi.git
